@@ -1,0 +1,337 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+09/19/2026   6:20 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: HRS k=1 lgcm quad;
+  DATA: FILE IS data/HRS.dat;
+  VARIABLE:
+    NAMES ARE id y1 y2 y3 y4;
+    USEV = y1 y2 y3 y4;
+    MISSING = ALL (-999);
+  ANALYSIS: TYPE = GENERAL;
+    STARTS = 1;
+    PROCESSORS = 4;
+  MODEL:
+    i BY y1@1 y2@1 y3@1 y4@1;
+    s BY y1@0 y2@4 y3@8 y4@12;
+    q BY y1@0 y2@16 y3@64 y4@144;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+HRS k=1 lgcm quad;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2183
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4
+
+Continuous latent variables
+   I           S           Q
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Random Starts Specifications
+  Number of random starts                                        1
+  Random starts scale                                    0.500D+01
+
+Input data file(s)
+  data/HRS.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            11
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1             0.896
+ Y2             0.806         0.894
+ Y3             0.734         0.731         0.829
+ Y4             0.539         0.550         0.576         0.616
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    9.089       0.115       3.994    0.05%       7.519      8.564      9.016
+            1957.000       3.354      -0.318      14.663    0.05%       9.503     10.675
+     Y2                    8.444       0.079       2.855    0.05%       6.787      7.912      8.387
+            1951.000       3.606      -0.243      15.308    0.05%       8.878     10.110
+     Y3                    8.025       0.017       1.822    0.06%       6.419      7.538      8.003
+            1809.000       3.550      -0.219      13.342    0.06%       8.484      9.597
+     Y4                    7.601       0.044       1.571    0.07%       5.929      7.121      7.623
+            1344.000       3.584      -0.202      13.368    0.07%       8.065      9.140
+
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST FIT FUNCTION VALUES
+
+Fit function values at local maxima and random start numbers:
+
+              0.0000         unperturbed
+              0.0000         1
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.501D-10.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 9, I
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Loglikelihood
+
+          H0 Value                      -10014.684
+          H1 Value                      -10014.684
+
+Information Criteria
+
+          Akaike (AIC)                   20057.369
+          Bayesian (BIC)                 20137.007
+          Sample-Size Adjusted BIC       20092.527
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           8887.426
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+    Y4                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+    Y4                12.000      0.000    999.000    999.000
+
+ Q        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                16.000      0.000    999.000    999.000
+    Y3                64.000      0.000    999.000    999.000
+    Y4               144.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.010      0.030      0.324      0.746
+
+ Q        WITH
+    I                 -0.001      0.002     -0.678      0.498
+    S                  0.000      0.000     -1.317      0.188
+
+ Intercepts
+    Y1                 9.100      0.039    231.695      0.000
+    Y2                 8.458      0.041    206.906      0.000
+    Y3                 7.938      0.042    190.830      0.000
+    Y4                 7.403      0.044    166.947      0.000
+
+ Variances
+    I                  3.120      0.142     21.982      0.000
+    S                  0.011      0.007      1.522      0.128
+    Q                  0.000      0.000      1.383      0.167
+
+ Residual Variances
+    Y1                 0.187      0.106      1.766      0.077
+    Y2                 0.319      0.037      8.553      0.000
+    Y3                 0.231      0.037      6.197      0.000
+    Y4                 0.326      0.117      2.781      0.005
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.104E-09
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+                  1             2             3             4
+
+
+           LAMBDA
+              I             S             Q
+              ________      ________      ________
+ Y1                 0             0             0
+ Y2                 0             0             0
+ Y3                 0             0             0
+ Y4                 0             0             0
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1                 5
+ Y2                 0             6
+ Y3                 0             0             7
+ Y4                 0             0             0             8
+
+
+           ALPHA
+              I             S             Q
+              ________      ________      ________
+                  0             0             0
+
+
+           BETA
+              I             S             Q
+              ________      ________      ________
+ I                  0             0             0
+ S                  0             0             0
+ Q                  0             0             0
+
+
+           PSI
+              I             S             Q
+              ________      ________      ________
+ I                  9
+ S                 10            11
+ Q                 12            13            14
+
+
+     STARTING VALUES
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+                9.089         8.444         8.025         7.601
+
+
+           LAMBDA
+              I             S             Q
+              ________      ________      ________
+ Y1             1.000         0.000         0.000
+ Y2             1.000         4.000        16.000
+ Y3             1.000         8.000        64.000
+ Y4             1.000        12.000       144.000
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1             1.677
+ Y2             0.000         1.803
+ Y3             0.000         0.000         1.775
+ Y4             0.000         0.000         0.000         1.792
+
+
+           ALPHA
+              I             S             Q
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           BETA
+              I             S             Q
+              ________      ________      ________
+ I              0.000         0.000         0.000
+ S              0.000         0.000         0.000
+ Q              0.000         0.000         0.000
+
+
+           PSI
+              I             S             Q
+              ________      ________      ________
+ I              0.050
+ S              0.000         0.050
+ Q              0.000         0.000         0.050
+
+
+     Beginning Time:  18:20:26
+        Ending Time:  18:20:26
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

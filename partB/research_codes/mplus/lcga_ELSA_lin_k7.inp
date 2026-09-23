@@ -1,0 +1,18 @@
+TITLE: ELSA k=7 lcga lin;
+DATA: FILE IS data/ELSA.dat;
+VARIABLE:
+  NAMES ARE id y1 y2 y3;
+  USEV = y1 y2 y3;
+  MISSING = ALL (-999);
+  CLASSES = c(7);
+ANALYSIS: TYPE = MIXTURE;
+  STARTS = 300 50;
+  LRTBOOTSTRAP = 100;
+  PROCESSORS = 4;
+MODEL:
+  %OVERALL%
+  i BY y1@1 y2@1 y3@1;
+  s BY y1@0 y2@4 y3@8;
+  i@0 s@0;
+  y1-y3 (res);
+OUTPUT: TECH11 TECH14;

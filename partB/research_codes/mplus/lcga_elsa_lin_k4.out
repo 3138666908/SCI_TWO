@@ -1,0 +1,553 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+09/19/2026   6:29 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: ELSA k=4 lcga lin;
+  DATA: FILE IS data/ELSA.dat;
+  VARIABLE:
+    NAMES ARE id y1 y2 y3;
+    USEV = y1 y2 y3;
+    MISSING = ALL (-999);
+    CLASSES = c(4);
+  ANALYSIS: TYPE = MIXTURE;
+    STARTS = 300 50;
+    LRTBOOTSTRAP = 100;
+    PROCESSORS = 4;
+  MODEL:
+    %OVERALL%
+    i BY y1@1 y2@1 y3@1;
+    s BY y1@0 y2@4 y3@8;
+    i@0 s@0;
+    y1-y3 (res);
+  OUTPUT: TECH11 TECH14;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+ELSA k=4 lcga lin;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2510
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3
+
+Continuous latent variables
+   I           S
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                        300
+  Number of final stage optimizations                           50
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  data/ELSA.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             4
+     Number of y missing data patterns           4
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1             0.936
+ Y2             0.857         0.922
+ Y3             0.757         0.743         0.822
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    9.662       0.039       3.158    0.04%       8.172      9.116      9.521
+            2349.000       3.398      -0.159      14.861    0.04%      10.029     11.316
+     Y2                    9.115       0.011       2.901    0.04%       7.552      8.575      9.054
+            2313.000       3.535      -0.139      14.518    0.04%       9.527     10.763
+     Y3                    8.716       0.052       1.667    0.05%       7.162      8.199      8.625
+            2062.000       3.750      -0.102      14.287    0.05%       9.120     10.358
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -9781.095  466971           109
+           -9781.095  399848           220
+           -9781.095  17359            227
+           -9781.095  939021           8
+           -9781.095  316165           299
+           -9781.095  568859           49
+           -9781.095  915107           54
+           -9781.095  264081           186
+           -9781.095  570782           193
+           -9781.095  835767           210
+           -9781.095  751153           110
+           -9781.095  369602           146
+           -9781.095  195873           6
+           -9781.095  636396           168
+           -9781.095  443917           60
+           -9781.095  414284           158
+           -9781.095  781190           219
+           -9781.095  616917           261
+           -9781.095  107446           12
+           -9781.095  49221            254
+           -9781.095  402224           91
+           -9781.095  496881           192
+           -9781.095  848163           47
+           -9781.095  751054           117
+           -9781.095  80438            246
+           -9781.095  438144           271
+           -9781.095  608460           244
+           -9781.095  373505           88
+           -9781.095  783110           72
+           -9781.095  391949           295
+           -9781.095  471438           252
+           -9781.095  748692           204
+           -9781.095  170118           238
+           -9781.095  814975           129
+           -9781.095  124999           96
+           -9781.095  479273           156
+           -9781.095  802779           122
+           -9781.095  701525           239
+           -9781.095  569833           85
+           -9781.095  481835           57
+           -9781.095  761633           50
+           -9781.095  903420           5
+           -9781.095  804561           59
+           -9781.095  246575           291
+           -9781.095  415502           194
+           -9781.095  284109           82
+           -9781.095  749453           33
+           -9781.095  535804           111
+           -9781.095  576596           99
+           -9781.095  674171           195
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     WARNING:  THE LATENT VARIABLE COVARIANCE MATRIX (PSI) IN CLASS 1
+     IS NOT POSITIVE DEFINITE.  THIS COULD INDICATE A NEGATIVE VARIANCE/
+     RESIDUAL VARIANCE FOR A LATENT VARIABLE, A CORRELATION GREATER OR EQUAL
+     TO ONE BETWEEN TWO LATENT VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE
+     THAN TWO LATENT VARIABLES.  CHECK THE TECH4 OUTPUT FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE I.
+
+
+     WARNING:  THE LATENT VARIABLE COVARIANCE MATRIX (PSI) IN CLASS 2
+     IS NOT POSITIVE DEFINITE.  THIS COULD INDICATE A NEGATIVE VARIANCE/
+     RESIDUAL VARIANCE FOR A LATENT VARIABLE, A CORRELATION GREATER OR EQUAL
+     TO ONE BETWEEN TWO LATENT VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE
+     THAN TWO LATENT VARIABLES.  CHECK THE TECH4 OUTPUT FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE I.
+
+
+     WARNING:  THE LATENT VARIABLE COVARIANCE MATRIX (PSI) IN CLASS 3
+     IS NOT POSITIVE DEFINITE.  THIS COULD INDICATE A NEGATIVE VARIANCE/
+     RESIDUAL VARIANCE FOR A LATENT VARIABLE, A CORRELATION GREATER OR EQUAL
+     TO ONE BETWEEN TWO LATENT VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE
+     THAN TWO LATENT VARIABLES.  CHECK THE TECH4 OUTPUT FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE I.
+
+
+     WARNING:  THE LATENT VARIABLE COVARIANCE MATRIX (PSI) IN CLASS 4
+     IS NOT POSITIVE DEFINITE.  THIS COULD INDICATE A NEGATIVE VARIANCE/
+     RESIDUAL VARIANCE FOR A LATENT VARIABLE, A CORRELATION GREATER OR EQUAL
+     TO ONE BETWEEN TWO LATENT VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE
+     THAN TWO LATENT VARIABLES.  CHECK THE TECH4 OUTPUT FOR MORE INFORMATION.
+     PROBLEM INVOLVING VARIABLE I.
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Loglikelihood
+
+          H0 Value                       -9781.095
+          H0 Scaling Correction Factor      1.7920
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   19590.189
+          Bayesian (BIC)                 19671.782
+          Sample-Size Adjusted BIC       19627.300
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        452.04576          0.18010
+       2        267.35620          0.10652
+       3        802.17698          0.31959
+       4        988.42107          0.39379
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        452.04576          0.18010
+       2        267.35620          0.10652
+       3        802.17698          0.31959
+       4        988.42107          0.39379
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              448          0.17849
+       2              257          0.10239
+       3              801          0.31912
+       4             1004          0.40000
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.819
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.931    0.000    0.069    0.000
+    2   0.000    0.911    0.000    0.089
+    3   0.044    0.000    0.871    0.086
+    4   0.000    0.033    0.073    0.893
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.923    0.000    0.077    0.000
+    2   0.000    0.876    0.000    0.124
+    3   0.038    0.000    0.870    0.092
+    4   0.000    0.023    0.069    0.907
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1     10.651   -3.084    8.170    0.000
+    2    -11.732    1.951   -9.420    0.000
+    3     -0.872  -10.770    2.247    0.000
+    4    -10.887   -3.667   -2.571    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.047      0.002     19.389      0.000
+
+ Means
+    I                  3.737      0.085     43.835      0.000
+    S                 -0.014      0.007     -2.226      0.026
+
+ Intercepts
+    Y1                 8.676      0.115     75.260      0.000
+    Y2                 8.119      0.118     68.946      0.000
+    Y3                 7.639      0.121     63.317      0.000
+
+ Variances
+    I                  0.000      0.000    999.000    999.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    Y1                 0.361      0.012     30.170      0.000
+    Y2                 0.361      0.012     30.170      0.000
+    Y3                 0.361      0.012     30.170      0.000
+
+Latent Class 2
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.047      0.002     19.389      0.000
+
+ Means
+    I                 -2.092      0.089    -23.474      0.000
+    S                  0.011      0.013      0.909      0.364
+
+ Intercepts
+    Y1                 8.676      0.115     75.260      0.000
+    Y2                 8.119      0.118     68.946      0.000
+    Y3                 7.639      0.121     63.317      0.000
+
+ Variances
+    I                  0.000      0.000    999.000    999.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    Y1                 0.361      0.012     30.170      0.000
+    Y2                 0.361      0.012     30.170      0.000
+    Y3                 0.361      0.012     30.170      0.000
+
+Latent Class 3
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.047      0.002     19.389      0.000
+
+ Means
+    I                  1.720      0.051     33.710      0.000
+    S                 -0.007      0.006     -1.263      0.207
+
+ Intercepts
+    Y1                 8.676      0.115     75.260      0.000
+    Y2                 8.119      0.118     68.946      0.000
+    Y3                 7.639      0.121     63.317      0.000
+
+ Variances
+    I                  0.000      0.000    999.000    999.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    Y1                 0.361      0.012     30.170      0.000
+    Y2                 0.361      0.012     30.170      0.000
+    Y3                 0.361      0.012     30.170      0.000
+
+Latent Class 4
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.047      0.002     19.389      0.000
+
+ Means
+    I                  0.000      0.000    999.000    999.000
+    S                  0.000      0.000    999.000    999.000
+
+ Intercepts
+    Y1                 8.676      0.115     75.260      0.000
+    Y2                 8.119      0.118     68.946      0.000
+    Y3                 7.639      0.121     63.317      0.000
+
+ Variances
+    I                  0.000      0.000    999.000    999.000
+    S                  0.000      0.000    999.000    999.000
+
+ Residual Variances
+    Y1                 0.361      0.012     30.170      0.000
+    Y2                 0.361      0.012     30.170      0.000
+    Y3                 0.361      0.012     30.170      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1               -0.782      0.120     -6.535      0.000
+    C#2               -1.308      0.149     -8.776      0.000
+    C#3               -0.209      0.111     -1.888      0.059
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.112E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 11 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                 300
+        Number of final stage optimizations                    50
+
+
+
+     VUONG-LO-MENDELL-RUBIN LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                       -10115.483
+          2 Times the Loglikelihood Difference            668.777
+          Difference in the Number of Parameters                3
+          Mean                                             28.852
+          Standard Deviation                               96.627
+          P-Value                                          0.0005
+
+     LO-MENDELL-RUBIN ADJUSTED LRT TEST
+
+          Value                                           641.462
+          P-Value                                          0.0007
+
+
+TECHNICAL 14 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                 300
+        Number of final stage optimizations                    50
+
+     Random Starts Specification for the k-1 Class Model for Generated Data
+        Number of initial stage random starts                   0
+        Number of final stage optimizations for the
+           initial stage random starts                          0
+     Random Starts Specification for the k Class Model for Generated Data
+        Number of initial stage random starts                  40
+        Number of final stage optimizations                     8
+     Number of bootstrap draws requested                      100
+
+
+     PARAMETRIC BOOTSTRAPPED LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                       -10115.483
+          2 Times the Loglikelihood Difference            668.777
+          Difference in the Number of Parameters                3
+          Approximate P-Value                              0.0000
+          Successful Bootstrap Draws                           97
+
+     WARNING:  OF THE 97 BOOTSTRAP DRAWS, 80 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
+     OBSERVED LRT VALUE AND NOT A REPLICATED BEST LOGLIKELIHOOD VALUE FOR THE 4-CLASS MODEL.
+     THIS MEANS THAT THE P-VALUE MAY NOT BE TRUSTWORTHY DUE TO LOCAL MAXIMA.
+     INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
+
+
+     WARNING:  3 OUT OF 100 BOOTSTRAP DRAWS DID NOT CONVERGE.
+     INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
+
+
+
+     Beginning Time:  18:29:08
+        Ending Time:  18:30:04
+       Elapsed Time:  00:00:56
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

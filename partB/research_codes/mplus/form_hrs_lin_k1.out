@@ -1,0 +1,216 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+09/19/2026   6:20 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: HRS k=1 lgcm lin;
+  DATA: FILE IS data/HRS.dat;
+  VARIABLE:
+    NAMES ARE id y1 y2 y3 y4;
+    USEV = y1 y2 y3 y4;
+    MISSING = ALL (-999);
+  ANALYSIS: TYPE = GENERAL;
+    STARTS = 1;
+    PROCESSORS = 4;
+  MODEL:
+    i BY y1@1 y2@1 y3@1 y4@1;
+    s BY y1@0 y2@4 y3@8 y4@12;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+HRS k=1 lgcm lin;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2183
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4
+
+Continuous latent variables
+   I           S
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Random Starts Specifications
+  Number of random starts                                        1
+  Random starts scale                                    0.500D+01
+
+Input data file(s)
+  data/HRS.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            11
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1             0.896
+ Y2             0.806         0.894
+ Y3             0.734         0.731         0.829
+ Y4             0.539         0.550         0.576         0.616
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    9.089       0.115       3.994    0.05%       7.519      8.564      9.016
+            1957.000       3.354      -0.318      14.663    0.05%       9.503     10.675
+     Y2                    8.444       0.079       2.855    0.05%       6.787      7.912      8.387
+            1951.000       3.606      -0.243      15.308    0.05%       8.878     10.110
+     Y3                    8.025       0.017       1.822    0.06%       6.419      7.538      8.003
+            1809.000       3.550      -0.219      13.342    0.06%       8.484      9.597
+     Y4                    7.601       0.044       1.571    0.07%       5.929      7.121      7.623
+            1344.000       3.584      -0.202      13.368    0.07%       8.065      9.140
+
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST FIT FUNCTION VALUES
+
+Fit function values at local maxima and random start numbers:
+
+             12.2436         1
+             12.2436         unperturbed
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       11
+
+Loglikelihood
+
+          H0 Value                      -10020.806
+          H1 Value                      -10014.684
+
+Information Criteria
+
+          Akaike (AIC)                   20063.612
+          Bayesian (BIC)                 20126.185
+          Sample-Size Adjusted BIC       20091.237
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             12.244
+          Degrees of Freedom                     3
+          P-Value                           0.0066
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.038
+          90 Percent C.I.                    0.017  0.061
+          Probability RMSEA <= .05           0.793
+
+CFI/TLI
+
+          CFI                                0.999
+          TLI                                0.998
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           8887.426
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.029
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ I        BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.000      0.000    999.000    999.000
+    Y3                 1.000      0.000    999.000    999.000
+    Y4                 1.000      0.000    999.000    999.000
+
+ S        BY
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 4.000      0.000    999.000    999.000
+    Y3                 8.000      0.000    999.000    999.000
+    Y4                12.000      0.000    999.000    999.000
+
+ S        WITH
+    I                  0.001      0.004      0.334      0.739
+
+ Intercepts
+    Y1                 9.100      0.040    229.820      0.000
+    Y2                 8.458      0.040    209.332      0.000
+    Y3                 7.939      0.041    191.904      0.000
+    Y4                 7.398      0.045    164.351      0.000
+
+ Variances
+    I                  3.120      0.102     30.617      0.000
+    S                  0.004      0.000     10.097      0.000
+
+ Residual Variances
+    Y1                 0.243      0.022     11.014      0.000
+    Y2                 0.320      0.016     20.598      0.000
+    Y3                 0.252      0.015     16.881      0.000
+    Y4                 0.321      0.026     12.303      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.177E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+     Beginning Time:  18:20:26
+        Ending Time:  18:20:26
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

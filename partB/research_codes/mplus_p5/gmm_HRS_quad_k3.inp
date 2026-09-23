@@ -1,0 +1,18 @@
+TITLE: HRS k=3 gmm quad;
+DATA: FILE IS data/HRS_train.dat;
+VARIABLE:
+  NAMES ARE id y1 y2 y3 y4 y5 y6;
+  USEV = y1 y2 y3 y4 y5 y6;
+  MISSING = ALL (-999);
+  CLASSES = c(3);
+ANALYSIS: TYPE = MIXTURE;
+  STARTS = 300 50;
+  LRTBOOTSTRAP = 100;
+  PROCESSORS = 4;
+MODEL:
+  %OVERALL%
+  i BY y1@1 y2@1 y3@1 y4@1 y5@1 y6@1;
+  s BY y1@0 y2@2 y3@4 y4@6 y5@8 y6@10;
+  q BY y1@0 y2@4 y3@16 y4@36 y5@64 y6@100;
+  y1-y6 (res);
+OUTPUT: TECH11 TECH14;

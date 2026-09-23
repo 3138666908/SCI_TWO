@@ -1,0 +1,27 @@
+{
+ "HRS_noecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "C": 10,
+   "gamma": "scale"
+  },
+  "KNN": {
+   "n_neighbors": 15
+  },
+  "MLP": {
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    64
+   ]
+  }
+ }
+}

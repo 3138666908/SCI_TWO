@@ -1,0 +1,202 @@
+{
+ "CHARLS_noecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    64
+   ]
+  }
+ },
+ "CHARLS_ecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    128
+   ]
+  }
+ },
+ "ELSA_noecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    128
+   ]
+  }
+ },
+ "ELSA_ecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    64
+   ]
+  }
+ },
+ "HRS_noecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    128
+   ]
+  }
+ },
+ "HRS_ecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    128
+   ]
+  }
+ },
+ "ALL_noecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    128
+   ]
+  }
+ },
+ "ALL_ecrf": {
+  "RF": {
+   "max_depth": 8,
+   "min_samples_leaf": 5,
+   "n_estimators": 300
+  },
+  "XGBoost": {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "n_estimators": 300
+  },
+  "SVM": {
+   "m__C": 1,
+   "m__gamma": "scale"
+  },
+  "KNN": {
+   "m__n_neighbors": 31
+  },
+  "MLP": {
+   "m__alpha": 0.0001,
+   "m__hidden_layer_sizes": [
+    64
+   ]
+  }
+ }
+}
